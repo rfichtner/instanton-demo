@@ -3,6 +3,7 @@ package one.microstream;
 import jakarta.ws.rs.core.Response;
 import one.microstream.data.DataStore;
 import jakarta.enterprise.context.RequestScoped;
+import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
@@ -15,6 +16,9 @@ import org.eclipse.microprofile.metrics.annotation.Timed;
 @Path("/storage")
 public class StorageResource {
 
+	@Inject
+	DataStore dataStore;
+	
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Timed(name = "getPropertiesTime",
@@ -22,7 +26,7 @@ public class StorageResource {
     @Counted(absolute = true, description
              = "Number of times the storgae was requested")
     public Response getProperties() {
-        return Response.ok(DataStore.Instance.pizzas).build();
+        return Response.ok(this.dataStore.getPizzas()).build();
     }
 
 }

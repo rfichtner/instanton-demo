@@ -38,6 +38,11 @@
 			<artifactId>microstream-storage-embedded</artifactId>
 			<version>08.01.01-MS-GA</version>
 		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-nop</artifactId>
+			<version>1.7.32</version>
+		</dependency>
 
 		<!-- For tests -->
 		<dependency>

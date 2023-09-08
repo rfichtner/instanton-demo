@@ -25,7 +25,7 @@ For more information about the runtime and host build system prerequisites, see 
     --tag demo-instanton \
     --file Dockerfile-instanton \
     --cap-add=CHECKPOINT_RESTORE \
-    --cap-add=SYS_PTRACE\
+    --cap-add=SYS_PTRACE \
     --cap-add=SETPCAP \
     --security-opt seccomp=unconfined
     

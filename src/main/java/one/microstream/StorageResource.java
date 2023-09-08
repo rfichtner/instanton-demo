@@ -25,7 +25,7 @@ public class StorageResource {
            description = "Time needed to get storage")
     @Counted(absolute = true, description
              = "Number of times the storgae was requested")
-    public Response getProperties() {
+    public Response getStroage() {
         return Response.ok(this.dataStore.getPizzas()).build();
     }
 

@@ -7,6 +7,11 @@ import java.util.List;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.context.Initialized;
 import jakarta.enterprise.event.Observes;
+import jakarta.ws.rs.client.Client;
+import jakarta.ws.rs.client.ClientBuilder;
+import jakarta.ws.rs.client.WebTarget;
+import jakarta.ws.rs.core.Response;
+import one.microstream.StorageResource;
 import one.microstream.domain.Pizza;
 import one.microstream.storage.embedded.types.EmbeddedStorage;
 import one.microstream.storage.embedded.types.EmbeddedStorageManager;
@@ -38,6 +43,25 @@ public class DataStore {
 			storage.storeRoot();
 			storage.shutdown();
 		}
+		
+		
+		
+//	      // client setup
+//	      Client client = ClientBuilder.newClient();
+//
+//	      // request
+//	      WebTarget target = client.target("http://localhost:9080/cluster-node/system/storage");
+//	      Response response = target.request().get();
+//
+//	    
+//	      response.close();
+//	      client.close();
+		
+		new StorageResource();
+		
+		
+		
+		
 	}
 
 
